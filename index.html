@@ -32,84 +32,199 @@
         <!-- =========== SLIDE =========== -->
 
         <slide>
-          <h1>Applause</h1>
-          <h3>HTML presentations powered by Angular JS</h3>
-
-          <div class="key-wrapper">
-            <div><span class="key dark-keys">&#9658;</span> or <span class="key dark-keys">space</span> next slide</div>
-            <div><span class="key dark-keys">&#9668;</span> previous</div>
-            <div><span class="key dark-keys">esc</span> toggle "go to" popup</div>
-          </div>
-          <note>This is what is called a speaker note!</note>
-        </slide>
-
-        <slide>
-          <h2>Why another presentation framework?</h2>
-          <p>There are plenty of presentation frameworks made with HTML, CSS and Javascript around. So why we need another one?</p>
-          <p>We probably don't. I've started this project just because I wanted to improve my Angular JS skills.</p>
-          <blockquote><code class="inline">blockquote</code> Lorem ipsum dolor sit amet, consectetur adipisicing elit</blockquote>
-          <note>This is the second note</note>
-        </slide>
-
-        <slide>
-          <h2>Presenter mode</h2>
+          <h1>From jQuery to Angular</h1>
+          <h2>MilanoJS - The Good Party<br><small>05 May 2015</small></h2>
           <table>
-            <tr>
-              <th>Normal view</th>
-              <th>Presenter mode</th>
-            </tr>
-            <tr>
-              <td><img src="assets/theme/images/slide-single.gif" alt=""/></td>
-              <td><img src="assets/theme/images/slide-presenter.gif" alt=""/></td>
-            </tr>
+            <tbody>
+              <tr>
+                <td width="50%">
+                  <img class="media center" src="assets/theme/images/profile.jpg" style="width:70%"">
+                </td>
+                <td width="50%">
+                  <ul>
+                    <li>Mauro Verrocchio</li>
+                    <li>Senior Frontend Engineer @ <a href="http://www.gild.com/">Gild</a></li>
+                    <li>Twitter: <a href="https://twitter.com/maur8ino">@maur8ino</a></li>
+                    <li>Github: <a href="https://github.com/maur8ino">@maur8ino</a></li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
           </table>
-          <p>In presenter mode, you can see the current and the upcoming slide.</p>
-          <p>To enter presenter mode, you just need to attach <code class="inline">?preview</code> in your URL. <a href="?preview">Try it out!</a></p>
-          <p>Slides are synchronized between tabs.</p>
         </slide>
 
         <slide>
-          <h2>Code highlighting</h2>
-<code prism class="language-javascript">
-  applause.directive('slide', function (Appdata) {
-    return {
-      restrict: 'EA',
-      transclude: true,
-      replace: true,
-      scope: {}
-    };
-  });
+          <h2>From jQuery to Angular</h2>
+          <h4>MilanoJS talk #2 - 01 Jul 2014</h4>
+          <img class="media center" src="assets/theme/images/10410793_487323884744770_1457756570299888723_n.jpg" style="width:90%">
+        </slide>
 
+        <slide>
+          <h2>jQuery.masterblaster</h2>
+          <img class="abs-center" src="assets/theme/images/masterblaster.gif">
+        </slide>
+
+        <slide>
+          <h2>jQuery.masterblaster <small>(init code)</small></h2>
+
+          <code prism class="language-javascript">var $mb = $( ".masterblaster-1" );
+ $mb.masterblaster({
+   tagRules: {
+     unique: true,
+     minLength: 3
+   }
+ });
+ $mb.masterblaster( "push", "tag 1" );
+ $mb.masterblaster( "push", "tag 2" );
+ $mb.on( "mb:add", function( e, tagName ) {
+   console.info( "Added: " + tagName );
+ });
+ $mb.on( "mb:remove", function( e, tagName ) {
+   console.info( "Removed: " + tagName );
+ });
 </code>
-  <p>Applause uses <a href="http://prismjs.com/">Prism JS</a> for code highlighting. You need to add the "language-*" class and the "prism" attribute to your element:
-    <br><code class="inline">&lt;div <strong>prism class="language-javascript"</strong>&gt;your code here&lt;/div&gt;</code></p>
-</slide>
-
-<slide markdown>
-  ##Markdown content
-
-  write your slide in markdown if you like it
-
-  - list item **one**
-  - list item *two*
-
-  Add the "markdown" attribute to the slide element `<code class="inline">&lt;slide <strong>markdown</strong>&gt;</code>`
-</slide>
-
-        <slide bg-img="oscar.jpg" credits="TIME & LIFE Pictures http://life.time.com/?attachment_id=11373">
-          <h2 class="left">Auto fitting images</h2>
-          <p class="light-text">Add the "bg-img" attribute to your slide element:<br><code class="inline">&lt;slide <strong>bg-img</strong>="path/to/image"&gt;</code><br>without worrying about the image size.</p>
-          <p class="light-text">You can add credits too (with autolink)<br><code class="inline">&lt;slide bg.img="..." <strong>credits</strong>="..."&gt;</code></p>
         </slide>
 
         <slide>
-          <h3 class="abs-center">Add<br>class="abs-center"<br>to an item to center it</h3>
+          <h2>jQuery.masterblaster <small>(source code)</small></h2>
+
+          <code prism class="language-javascript">[...]
+ function MasterBlaster( $element, options ) {
+     [...]
+     this.tag = [ '&ltli style="opacity:1" data-tag="" class="mb-tag"&gt;',
+                  '&lt;div class="mb-tag-content"&gt;',
+                  '&lt;span class="mb-tag-text"&gt;&lt;/span&gt;',
+                  '&lt;a class="mb-tag-remove"&gt;&lt;/a&gt;',
+                  '&lt;/div&gt;&lt;/li&gt;' ].join( "" );
+ }
+ MasterBlaster.prototype.buildTag = function( tagName ) {
+     var $tag = $( this.tag );
+     [...]
+     return $tag;
+ };
+ [...]
+</code>
         </slide>
 
         <slide>
-          <h1>Do you like that?</h1>
-          <img class="center media" src="assets/theme/images/slow-clap.gif" alt=""/>
-          <p class="center">Follow me on twitter <a href="https://twitter.com/granze">@granze</a></p>
+          <h2>jQuery.masterblaster <small>(source code)</small></h2>
+
+          <code prism class="language-javascript">[...]
+ MasterBlaster.prototype.addElem = function( $tag ) {
+     [...]
+     $tag.insertBefore( this.$meta );
+ };
+ MasterBlaster.prototype.removeElem = function( tagName ) {
+     var $tag = this.$tagList.find( "[data-tag='"+tagName+"']" );
+     [...]
+     $tag.remove( );
+ };
+ [...]
+          </code>
+        </slide>
+        <slide>
+          <div class="abs-center">
+            <h2>jQuery plugins <small>(mainly)</small></h2>
+            <h1>-></h1>
+            <h2>Imperative DOM manipulation</h2>
+          </div>
+        </slide>
+
+        <slide>
+          <h2>Angular declarative way</h2>
+          <h2 class="abs-center">Change <code class="inline">$scope</code> and let Angular manipulate DOM</h2>
+        </slide>
+
+        <slide>
+          <h2>Angular <code>directive</code></h2>
+          <code prism class="language-markup">&lt;form ng-submit="addTag()"&gt;
+  &lt;input type="text" ng-model="newTag"&gt;
+  &lt;button class="btn btn-primary" ng-repeat="tag in tagList track by $index"
+          type="button"&gt;
+      {{"{{tag}\}"}}
+      &lt;span ng-click="removeTag($index)"
+            class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="btn btn-default" type="submit"&gt;add tag&lt;/button&gt;
+&lt;/form&gt;</code>
+          <code prism class="language-javascript">
+$scope.tagList = ['tag1', 'tag2', 'tag3'];
+$scope.addTag = function() {
+  $scope.tagList.push($scope.newTag);
+};
+$scope.removeTag= function($index) {
+  $scope.tagList.splice($index, 1);
+};</code>
+</slide>
+
+        <slide>
+          <h2>Angular <code>$watch</code> and <code>$digest</code></h2>
+          <h3><code>$watch</code> list</h3>
+          <code prism class="language-javascript">
+$scope.tagList = ['tag1', 'tag2', 'tag3'];
+          </code>
+          <h3>watchers</h3>
+          <code prism class="language-markup">
+&lt;button ng-repeat="tag in tagList track by $index"&gt;
+  {{"{{tag}\}"}}
+  &lt;span ng-click="removeTag($index)"&gt;
+&lt;/button&gt
+          </code>
+          <h3>every change in the <code>angular context</code> kicks a <code>$digest</code> loop</h3>
+        </slide>
+
+        <slide>
+          <h2><code>directive</code> isolated scope</h2>
+          <code prism class="language-javascript">angular.module('mjsTalkApp', [])
+  .directive('mjsTagger', function () {
+    return {
+[...]
+      scope: {
+        unique : '@unique',
+        tagList : '=tags'
+      }
+[...]
+     };
+  });
+          </code>
+          <code prism class="language-markup">&lt;x-mjs-tagger unique="true" tags="tags"&gt;&lt;/x-mjs-tagger&gt;
+</code>
+          <h3>parent <code>$scope</code></h3>
+          <code prism class="language-javascript">$scope.tags = ['javascript', 'awesome'];
+</code>
+        </slide>
+
+        <slide>
+          <h2>Angular testing</h2>
+          <code prism class="language-javascript">var element,
+    $scope,
+    directiveScope;
+function compileDirective(html) {
+  inject(function ($compile) {
+    element = angular.element(html);
+    $compile(element)($scope);
+    directiveScope = element.isolateScope();
+  });
+}
+it('should add a tag', function() {
+  $scope.tags = ['a', 'b'];
+  compileDirective('<x-mjs-tagger tags="tags"></x-mjs-tagger>');
+  directiveScope.newTag = 'c';
+  directiveScope.addTag();
+  expect(directiveScope.tagList.length).toBe(3);
+  expect(directiveScope.tagList).toEqual(['a', 'b', 'c']);
+});
+</code>
+        </slide>
+
+        <slide>
+          <h2>That's all!</h2>
+          <div class="abs-center">
+            <h3>source code:<br><a href="https://github.com/milano-js/from-jquery-to-angular/" style="color: rgb(0, 0, 238)">https://github.com/milano-js/from-jquery-to-angular/</a></h3>
+            <h3><code>$watch</code> and <code>$digest</code> reference:<br><a href="http://angular-tips.com/blog/2013/08/watch-how-the-apply-runs-a-digest/" style="color: rgb(0, 0, 238)">http://angular-tips.com/blog/2013/08/watch-how-the-apply-runs-a-digest/</a></h3>
+          </div>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <h3>Thanks for listening!</h3>
         </slide>
 
         <!-- =========== /SLIDE =========== -->
